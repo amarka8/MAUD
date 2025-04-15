@@ -701,11 +701,11 @@ def main():
     parser.add_argument("--seed", type=int, default=42, help="random seed for initialization")
 
     parser.add_argument("--local_rank", type=int, default=-1, help="local_rank for distributed training on gpus")
-    parser.add_argument(
-        "--fp16",
-        action="store_true",
-        help="Whether to use 16-bit (mixed) precision (through NVIDIA apex) instead of 32-bit",
-    )
+    # parser.add_argument(
+    #     "--fp16",
+    #     action="store_true",
+    #     help="Whether to use 16-bit (mixed) precision (through NVIDIA apex) instead of 32-bit",
+    # )
     # parser.add_argument(
     #     "--fp16_opt_level",
     #     type=str,
@@ -754,6 +754,7 @@ def main():
         mps_device = torch.device("mps")
         args.device = mps_device
         args.n_gpu = 1
+        
     else:
         logger.info("cpu being used")
         device = torch.device("cpu")
@@ -763,7 +764,7 @@ def main():
     logger.warning(
         "Process rank: %s, device: %s, n_gpu: %s, distributed training: %s",
         args.local_rank,
-        device,
+        args.device,
         args.n_gpu,
         bool(args.local_rank != -1)
     )

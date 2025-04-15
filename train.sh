@@ -16,9 +16,9 @@ for run_num in 1; do
               --output_dir $output_dir \
               --model_type roberta \
               --model_name_or_path roberta-base \
-              --data_dir /Users/amarkanaka/repos/Case-Study/MAUD/MAUD-test-train-dev \
-              --train_file /Users/amarkanaka/repos/Case-Study/MAUD/MAUD-test-train-dev/maud_squad_train.json \
-              --predict_file /Users/amarkanaka/repos/Case-Study/MAUD/MAUD-test-train-dev/maud_squad_dev.json \
+              --data_dir /Users/amarkanaka/repos/MAUD/MAUD-test-train-dev \
+              --train_file /Users/amarkanaka/repos/MAUD/MAUD-test-train-dev/maud_squad_train.json \
+              --predict_file /Users/amarkanaka/repos/MAUD/MAUD-test-train-dev/maud_squad_dev.json \
               --cache_dir ./_cached_features/${eval_mode}/maud_${cache_type} \
               --version_2_with_negative \
               --learning_rate $lr \
